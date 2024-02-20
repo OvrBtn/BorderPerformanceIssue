@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BorderPerformanceIssue.CarouselWithBorder"
+             xmlns:local="clr-namespace:BorderPerformanceIssue"
+             x:DataType="local:SharedViewModel">
+
+    <CarouselView ItemsSource="{Binding Items}">
+        <CarouselView.ItemTemplate>
+            <DataTemplate x:DataType="local:CarouselObject">
+                <CollectionView ItemsSource="{Binding ItemsCollection}" Margin="20">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="local:SingleItem">
+                            <Border Margin="5" BackgroundColor="Green">
+                                <Label Text="{Binding Text}" TextColor="White"></Label>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </DataTemplate>
+        </CarouselView.ItemTemplate>
+    </CarouselView>
+
+</ContentPage>
